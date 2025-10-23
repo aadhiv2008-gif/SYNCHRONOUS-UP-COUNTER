@@ -31,16 +31,26 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 /* write all the steps invloved */
 
 **PROGRAM**
-
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
-
-Developed by: RegisterNumber:
-*/
+module DE1(out,clk,rstn);
+input clk,rstn;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+	if(!rstn)
+		out<=0;
+	else
+		out <= out+1;
+end
+endmodule
 
 **RTL LOGIC UP COUNTER**
+<img width="1920" height="1080" alt="Screenshot (44)" src="https://github.com/user-attachments/assets/ad19cdd5-6036-4429-9c86-e8ab8ef706db" />
 
-**TIMING DIAGRAM FOR IP COUNTER**
+
+**TIMING<img width="1920" height="1080" alt="Screenshot (45)" src="https://github.com/user-attachments/assets/e049fc5c-d36c-4e81-9d10-ad58e254d0bd" />
+ DIAGRAM FOR IP COUNTER**
 
 **TRUTH TABLE**
 
 **RESULTS**
+Thus,implement 4 bit synchronous up counter and validate functionality.
